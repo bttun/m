@@ -3,5 +3,5 @@
 body {background-color: lightgrey;}
 .page-header {display: none;}
 // .main-content {max-width: 80rem;}
-@media screen and (min-width: 80em){.main-content{max-width: 80rem;}}
+@media screen and (min-width: 80em){.main-content{max-width:80rem;}}
 @import "{{ site.theme }}";
