@@ -1,0 +1,5 @@
+@import "{{ site.theme }}";
+
+body {background-color: lightgrey;}
+.page-header {display: none;}
+.main-content {max-width: 80rem;}
