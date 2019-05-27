@@ -19,10 +19,9 @@ display(HTML("<style>.container { width:70% !important; }</style>"))
 
 
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+<script src="//code.highcharts.com/stock/highstock.js"></script>
+<script src="//code.highcharts.com/highcharts-more.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
 
 
 
@@ -45,10 +44,21 @@ for symbol in MONITOR_TARGET:
     df['date'] = df['date'].apply(lambda x: x.to_timestamp().to_datetime64())
     df.set_index('date', inplace=True)
 
-    title = '%s %s' % (symbol, MONITOR_TARGET[symbol]['NAME'])
+    today_market = df.iloc[-1]
+    now_point = today_market.open
+    for col in df.columns:
+        if 'ROLLINGMAX' in col:
+            buy_point = today_market[col]
+            buy_diff = (buy_point - now_point) / now_point * 100
+        elif 'ROLLINGMIN' in col:
+            sell_point = today_market[col]
+            sell_diff = (now_point - sell_point) / now_point * 100
+    title = '%s, %s, open=%d, buy=%d(+%.1f%%), sell=%d(-%.1f%%)' % \
+        (symbol, today_market.name.date(), now_point, buy_point, buy_diff, sell_point, sell_diff)
     
 #     display_charts(df, chart_type='stock', kind='line', title=title, figsize=(1000, 600))
     ax = df.plot(kind='line', title=title, linewidth=0.9, grid=True, figsize=(19, 7))
+    ax.yaxis.tick_right()
 ```
 
 
