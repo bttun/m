@@ -37,6 +37,8 @@ display(HTML("<style>.container { width:70% !important; }</style>"))
 
 
 ```python
+monitor_df = pd.DataFrame(columns=['SYMBOL', 'DATE', 'NOW', 'BUY', 'BUYDIFF', 'SELL', 'SELLDIFF'])
+
 for symbol in MONITOR_TARGET:
     df = stock_df_dict[symbol].iloc[-100:].copy()    
     df.reset_index(drop=False, inplace=True)
@@ -53,16 +55,111 @@ for symbol in MONITOR_TARGET:
         elif 'ROLLINGMIN' in col:
             sell_point = today_market[col]
             sell_diff = (now_point - sell_point) / now_point * 100
+    
+    monitor_df = monitor_df.append({
+        'SYMBOL': symbol, 
+        'DATE': today_market.name.date(), 
+        'NOW': now_point, 
+        'BUY': buy_point, 
+        'BUYDIFF': '+%.2f%%' % buy_diff, 
+        'SELL': sell_point, 
+        'SELLDIFF': '-%.2f%%' % sell_diff,
+    }, ignore_index=True)
+    
     title = '%s, %s, open=%d, buy=%d(+%.1f%%), sell=%d(-%.1f%%)' % \
         (symbol, today_market.name.date(), now_point, buy_point, buy_diff, sell_point, sell_diff)
-    
 #     display_charts(df, chart_type='stock', kind='line', title=title, figsize=(1000, 600))
     ax = df.plot(kind='line', title=title, linewidth=0.9, grid=True, figsize=(19, 7))
     ax.yaxis.tick_right()
+    
+monitor_df
 ```
 
 
-![png](output_2_0.png)
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SYMBOL</th>
+      <th>DATE</th>
+      <th>NOW</th>
+      <th>BUY</th>
+      <th>BUYDIFF</th>
+      <th>SELL</th>
+      <th>SELLDIFF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>399300</td>
+      <td>2019-05-27</td>
+      <td>3592.60</td>
+      <td>4125.97</td>
+      <td>+14.85%</td>
+      <td>3584.90</td>
+      <td>-0.21%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>000905</td>
+      <td>2019-05-27</td>
+      <td>4848.64</td>
+      <td>5852.64</td>
+      <td>+20.71%</td>
+      <td>4848.58</td>
+      <td>-0.00%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>399006</td>
+      <td>2019-05-27</td>
+      <td>1447.98</td>
+      <td>1787.96</td>
+      <td>+23.48%</td>
+      <td>1447.98</td>
+      <td>-0.00%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BITCOIN</td>
+      <td>2019-05-26</td>
+      <td>8055.21</td>
+      <td>8196.92</td>
+      <td>+1.76%</td>
+      <td>7267.96</td>
+      <td>-9.77%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EOS</td>
+      <td>2019-05-26</td>
+      <td>6.39</td>
+      <td>6.50</td>
+      <td>+1.72%</td>
+      <td>5.89</td>
+      <td>-7.82%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 
@@ -79,4 +176,8 @@ for symbol in MONITOR_TARGET:
 
 
 ![png](output_2_4.png)
+
+
+
+![png](output_2_5.png)
 
