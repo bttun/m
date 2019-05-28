@@ -19,9 +19,10 @@ display(HTML("<style>.container { width:70% !important; }</style>"))
 
 
 
-<script src="//code.highcharts.com/stock/highstock.js"></script>
-<script src="//code.highcharts.com/highcharts-more.js"></script>
-<script src="//code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
 
 
 
@@ -109,52 +110,52 @@ monitor_df
     <tr>
       <th>0</th>
       <td>399300</td>
-      <td>2019-05-27</td>
-      <td>3592.60</td>
+      <td>2019-05-28</td>
+      <td>3633.02</td>
       <td>4125.97</td>
-      <td>+14.85%</td>
+      <td>+13.57%</td>
       <td>3584.90</td>
-      <td>-0.21%</td>
+      <td>-1.32%</td>
     </tr>
     <tr>
       <th>1</th>
       <td>000905</td>
-      <td>2019-05-27</td>
-      <td>4848.64</td>
-      <td>5852.64</td>
-      <td>+20.71%</td>
+      <td>2019-05-28</td>
+      <td>4965.59</td>
+      <td>5821.02</td>
+      <td>+17.23%</td>
       <td>4848.58</td>
-      <td>-0.00%</td>
+      <td>-2.36%</td>
     </tr>
     <tr>
       <th>2</th>
       <td>399006</td>
-      <td>2019-05-27</td>
-      <td>1447.98</td>
+      <td>2019-05-28</td>
+      <td>1497.12</td>
       <td>1787.96</td>
-      <td>+23.48%</td>
+      <td>+19.43%</td>
       <td>1447.98</td>
-      <td>-0.00%</td>
+      <td>-3.28%</td>
     </tr>
     <tr>
       <th>3</th>
       <td>BITCOIN</td>
-      <td>2019-05-26</td>
-      <td>8055.21</td>
-      <td>8196.92</td>
-      <td>+1.76%</td>
+      <td>2019-05-27</td>
+      <td>8674.07</td>
+      <td>8674.07</td>
+      <td>+0.00%</td>
       <td>7267.96</td>
-      <td>-9.77%</td>
+      <td>-16.21%</td>
     </tr>
     <tr>
       <th>4</th>
       <td>EOS</td>
-      <td>2019-05-26</td>
-      <td>6.39</td>
-      <td>6.50</td>
-      <td>+1.72%</td>
+      <td>2019-05-27</td>
+      <td>6.90</td>
+      <td>6.90</td>
+      <td>+0.00%</td>
       <td>5.89</td>
-      <td>-7.82%</td>
+      <td>-14.64%</td>
     </tr>
   </tbody>
 </table>
