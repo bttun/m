@@ -32,6 +32,12 @@ display(HTML("<style>.container { width:70% !important; }</style>"))
 
 
 ```python
+%%capture
+%run -t monitor_daily.ipynb
+```
+
+
+```python
 %store -r MONITOR_TARGET
 %store -r stock_df_dict
 ```
@@ -48,7 +54,7 @@ for symbol in MONITOR_TARGET:
     df.set_index('date', inplace=True)
 
     today_market = df.iloc[-1]
-    now_point = today_market.open
+    now_point = today_market.close
     for col in df.columns:
         if 'ROLLINGMAX' in col:
             buy_point = today_market[col]
@@ -110,52 +116,32 @@ monitor_df
     <tr>
       <th>0</th>
       <td>399300</td>
-      <td>2019-05-30</td>
-      <td>3648.85</td>
-      <td>4125.97</td>
-      <td>+13.08%</td>
-      <td>3584.90</td>
-      <td>-1.75%</td>
+      <td>2019-06-04</td>
+      <td>3598.47</td>
+      <td>4120.61</td>
+      <td>+14.51%</td>
+      <td>3583.96</td>
+      <td>-0.40%</td>
     </tr>
     <tr>
       <th>1</th>
       <td>000905</td>
-      <td>2019-05-30</td>
-      <td>4933.50</td>
-      <td>5821.02</td>
-      <td>+17.99%</td>
-      <td>4848.58</td>
-      <td>-1.72%</td>
+      <td>2019-06-04</td>
+      <td>4795.41</td>
+      <td>5810.18</td>
+      <td>+21.16%</td>
+      <td>4795.41</td>
+      <td>-0.00%</td>
     </tr>
     <tr>
       <th>2</th>
       <td>399006</td>
-      <td>2019-05-30</td>
-      <td>1494.35</td>
-      <td>1787.96</td>
-      <td>+19.65%</td>
-      <td>1447.98</td>
-      <td>-3.10%</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>BITCOIN</td>
-      <td>2019-05-29</td>
-      <td>8718.59</td>
-      <td>8802.76</td>
-      <td>+0.97%</td>
-      <td>7677.27</td>
-      <td>-11.94%</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>EOS</td>
-      <td>2019-05-29</td>
-      <td>8.05</td>
-      <td>8.05</td>
-      <td>+0.00%</td>
-      <td>5.97</td>
-      <td>-25.84%</td>
+      <td>2019-06-04</td>
+      <td>1456.27</td>
+      <td>1777.26</td>
+      <td>+22.04%</td>
+      <td>1443.75</td>
+      <td>-0.86%</td>
     </tr>
   </tbody>
 </table>
@@ -164,21 +150,13 @@ monitor_df
 
 
 
-![png](output_2_1.png)
+![png](output_3_1.png)
 
 
 
-![png](output_2_2.png)
+![png](output_3_2.png)
 
 
 
-![png](output_2_3.png)
-
-
-
-![png](output_2_4.png)
-
-
-
-![png](output_2_5.png)
+![png](output_3_3.png)
 
