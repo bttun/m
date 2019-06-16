@@ -34,10 +34,6 @@ display(HTML("<style>.container { width:70% !important; }</style>"))
 ```python
 %%capture
 %run -t monitor_daily_rotation.ipynb
-```
-
-
-```python
 %store -r MONITOR_TARGET
 %store -r stock_df_dict
 ```
@@ -124,82 +120,82 @@ monitor_df
     <tr>
       <th>0</th>
       <td>399300</td>
-      <td>2019-06-04</td>
-      <td>3598.470</td>
-      <td>3648.254706</td>
-      <td>-1.38%</td>
-      <td>-1.40%</td>
-      <td>3649.3800</td>
+      <td>2019-06-13</td>
+      <td>3685.3900</td>
+      <td>3637.478824</td>
+      <td>1.30%</td>
+      <td>1.21%</td>
+      <td>3641.180</td>
     </tr>
     <tr>
       <th>1</th>
       <td>000905</td>
-      <td>2019-06-04</td>
-      <td>4795.410</td>
-      <td>4946.261176</td>
-      <td>-3.15%</td>
-      <td>-3.64%</td>
-      <td>4976.3900</td>
+      <td>2019-06-13</td>
+      <td>4877.6500</td>
+      <td>4876.137647</td>
+      <td>0.03%</td>
+      <td>-0.99%</td>
+      <td>4926.400</td>
     </tr>
     <tr>
       <th>2</th>
       <td>399006</td>
-      <td>2019-06-04</td>
-      <td>1456.270</td>
-      <td>1486.739412</td>
-      <td>-2.09%</td>
-      <td>-2.17%</td>
-      <td>1488.6300</td>
+      <td>2019-06-13</td>
+      <td>1479.8300</td>
+      <td>1470.950000</td>
+      <td>0.60%</td>
+      <td>-0.36%</td>
+      <td>1485.240</td>
     </tr>
     <tr>
       <th>3</th>
       <td>BTC</td>
-      <td>2019-06-04</td>
-      <td>7942.000</td>
-      <td>7681.076667</td>
-      <td>3.29%</td>
-      <td>-6.26%</td>
-      <td>8472.4000</td>
+      <td>2019-06-15</td>
+      <td>8749.2000</td>
+      <td>8097.810000</td>
+      <td>7.45%</td>
+      <td>4.33%</td>
+      <td>8386.000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>EOS</td>
-      <td>2019-06-04</td>
-      <td>6.734</td>
-      <td>6.350367</td>
-      <td>5.70%</td>
-      <td>-7.37%</td>
-      <td>7.2700</td>
+      <td>2019-06-15</td>
+      <td>6.6760</td>
+      <td>6.704833</td>
+      <td>-0.43%</td>
+      <td>4.28%</td>
+      <td>6.402</td>
     </tr>
     <tr>
       <th>5</th>
       <td>ETH</td>
-      <td>2019-06-04</td>
-      <td>248.840</td>
-      <td>234.040000</td>
-      <td>5.95%</td>
-      <td>-4.17%</td>
-      <td>259.6600</td>
+      <td>2019-06-15</td>
+      <td>264.5800</td>
+      <td>253.171000</td>
+      <td>4.31%</td>
+      <td>3.39%</td>
+      <td>255.900</td>
     </tr>
     <tr>
       <th>6</th>
       <td>XRP</td>
-      <td>2019-06-04</td>
-      <td>0.412</td>
-      <td>0.383503</td>
-      <td>6.92%</td>
-      <td>-6.53%</td>
-      <td>0.4408</td>
+      <td>2019-06-15</td>
+      <td>0.4071</td>
+      <td>0.406710</td>
+      <td>0.10%</td>
+      <td>3.32%</td>
+      <td>0.394</td>
     </tr>
     <tr>
       <th>7</th>
       <td>LTC</td>
-      <td>2019-06-04</td>
-      <td>104.160</td>
-      <td>95.597667</td>
-      <td>8.22%</td>
-      <td>-6.23%</td>
-      <td>111.0800</td>
+      <td>2019-06-15</td>
+      <td>134.4800</td>
+      <td>109.654333</td>
+      <td>18.46%</td>
+      <td>4.98%</td>
+      <td>128.100</td>
     </tr>
   </tbody>
 </table>
@@ -208,33 +204,33 @@ monitor_df
 
 
 
-![png](output_3_1.png)
+![png](output_2_1.png)
 
 
 
-![png](output_3_2.png)
+![png](output_2_2.png)
 
 
 
-![png](output_3_3.png)
+![png](output_2_3.png)
 
 
 
-![png](output_3_4.png)
+![png](output_2_4.png)
 
 
 
-![png](output_3_5.png)
+![png](output_2_5.png)
 
 
 
-![png](output_3_6.png)
+![png](output_2_6.png)
 
 
 
-![png](output_3_7.png)
+![png](output_2_7.png)
 
 
 
-![png](output_3_8.png)
+![png](output_2_8.png)
 
