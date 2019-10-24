@@ -1,7 +1,7 @@
 ---
 ---
-body {background-color: lightgrey;}
-.page-header {display: none;}
+// body {background-color: lightgrey;}
+// .page-header {display: none;}
 // .main-content {max-width: 80rem;}
 @media screen and (min-width: 64em){.main-content{max-width:80% !important;}}
 @import "{{ site.theme }}";
